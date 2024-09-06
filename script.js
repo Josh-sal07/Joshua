@@ -1,55 +1,52 @@
 document.getElementById("info-form").addEventListener("submit", function(event) {
     event.preventDefault();
 
-    
-    let name = document.getElementById("name").value;
-    let age = document.getElementById("age").value;
-    let hobbies = document.getElementById("hobbies").value.split(',').map(hobby => hobby.trim()); 
-    let isStudent = document.getElementById("student").checked; 
+    // Get values from form
+    let name = document.getElementById("item-name").value;
+    let price = document.getElementById("price").value;
+    let quantity = document.getElementById("quantity").value;
 
-    
+    // Create a new summary item
     let summaryItem = document.createElement('div');
     summaryItem.classList.add('summary-item');
 
-    
+    // Create summary content
     let summaryContent = `
         <p>
-            Name: ${name} <br>
-            Age: ${age} <br>
-            Hobbies: ${hobbies.join(', ')} <br>
-            Student: ${isStudent ? 'Yes' : 'No'}
+             ${name} 
+             -₱${price}.00 
+            x ${quantity}
         </p>
     `;
 
-    
+    // Create and set up the edit button
     let editButton = document.createElement('button');
     editButton.textContent = 'Edit';
     editButton.onclick = function() {
-        
-        document.getElementById("name").value = name;
-        document.getElementById("age").value = age;
-        document.getElementById("hobbies").value = hobbies.join(', ');
-        document.getElementById("student").checked = isStudent;
+        // Populate the form with the current summary item data
+        document.getElementById("item-name").value = name;
+        document.getElementById("price").value = price;
+        document.getElementById("quantity").value = quantity;
 
-        
+        // Remove the summary item
         summaryItem.remove();
     };
 
+    // Create and set up the delete button
     let deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.onclick = function() {
-        
         summaryItem.remove();
     };
 
-    
+    // Append the summary content and buttons to the summary item
     summaryItem.innerHTML = summaryContent;
     summaryItem.appendChild(editButton);
     summaryItem.appendChild(deleteButton);
 
-    
+    // Append the summary item to the summary container
     document.getElementById('Summary').appendChild(summaryItem);
 
-    
+    // Reset the form
     document.getElementById("info-form").reset();
 });

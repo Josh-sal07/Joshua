@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Information</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General body and container styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Form styles */
+#info-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Summary styles */
+#Summary {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    color: #333;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.summary-item:last-child {
+    border-bottom: none;
+}
+
+.summary-item input[type="checkbox"] {
+    cursor: pointer;
+}
+
+.summary-item p {
+    margin: 0;
+    flex-grow: 1;
+    color: #333;
+}
+
+.summary-item button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 10px;
+}
+
+.summary-item button:hover {
+    background-color: #c82333;
+}
+
+/* Checkout button styles */
+.checkout-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.checkout-button:hover {
+    background-color: #0056b3;
+}
+
+        /* Existing styles here */
+        /* Add additional styles if needed */
+        .checkout-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .checkout-button:hover {
+            background-color: #0056b3;
+        }
+        
+        .summary-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .total-amount {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>ENHANCE SHOPPING CART</h1>
+    <div class="main-container">
+        <div class="wrap">
+            <form id="info-form">
+                <label for="item-name">Item Name: </label>
+                <input type="text" id="item-name" placeholder="Enter Item name"><br><br>
+    
+                <label for="price">Item Price: </label>
+                <input type="number" id="price" placeholder="Enter Price"><br><br>
+    
+                <label for="quantity">Quantity: </label>
+                <input type="number" id="quantity" placeholder="Enter Quantity"><br><br>
+    
+                <button type="submit" id="addTodo">Add to Cart</button>
+            </form>
+    
+            <div id="Summary">
+                <h2>Cart Items</h2>
+                <div id="totalAmount" class="total-amount">Total: ₱0.00</div>
+            </div>
+    
+            <button id="checkoutButton" class="checkout-button">Checkout</button>
+        </div>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>
